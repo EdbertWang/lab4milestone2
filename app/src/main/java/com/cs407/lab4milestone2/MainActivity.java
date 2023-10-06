@@ -42,15 +42,12 @@ public class MainActivity extends AppCompatActivity {
 
             @Override
             public void onStatusChanged(String s, int i, Bundle bundle){
-                return;
             }
             @Override
             public void onProviderEnabled(String s){
-                return;
             }
             @Override
             public void onProviderDisabled(String s){
-                return;
             }
         };
 
@@ -79,6 +76,7 @@ public class MainActivity extends AppCompatActivity {
     public  void onRequestPermissionsResult(int requesCode, @NotNull String[] permissions, @NotNull int[] grantResults){
         super.onRequestPermissionsResult(requesCode,permissions,grantResults);
         if (grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+            Log.i("Permission Granted","Permission Granted");
             startListening();
         }
     }
@@ -103,21 +101,21 @@ public class MainActivity extends AppCompatActivity {
 
             if (listAddresses != null && listAddresses.size() > 0){
                 Log.i ("PlaceInfo",listAddresses.get(0).toString());
-                address = "Address: \n";
+                address = "";
                 if (listAddresses.get(0).getSubThoroughfare() != null){
                     address += listAddresses.get(0).getSubThoroughfare() + " ";
                 }
                 if (listAddresses.get(0).getThoroughfare() != null){
-                    address = listAddresses.get(0).getThoroughfare() + " ";
+                    address += listAddresses.get(0).getThoroughfare() + " ";
                 }
                 if (listAddresses.get(0).getLocality() != null){
-                    address = listAddresses.get(0).getLocality() + " ";
+                    address += listAddresses.get(0).getLocality() + " ";
                 }
                 if (listAddresses.get(0).getPostalCode() != null){
-                    address = listAddresses.get(0).getPostalCode() + " ";
+                    address += listAddresses.get(0).getPostalCode() + " ";
                 }
                 if (listAddresses.get(0).getCountryName() != null){
-                    address = listAddresses.get(0).getCountryName() + " ";
+                    address += listAddresses.get(0).getCountryName() + " ";
                 }
             }
 
