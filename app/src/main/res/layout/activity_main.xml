@@ -95,4 +95,14 @@
         app:layout_constraintTop_toBottomOf="@+id/Address"
         app:layout_constraintVertical_bias="0.135" />
 
+    <TextView
+        android:id="@+id/addrTxt"
+        android:layout_width="161dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="42dp"
+        android:layout_marginBottom="-300dp"
+        android:text="Addr Not Found"
+        app:layout_constraintBottom_toTopOf="@+id/background"
+        app:layout_constraintStart_toEndOf="@+id/Address" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>
